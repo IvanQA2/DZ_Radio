@@ -16,6 +16,28 @@ class RadioTest {
 
     }
     @Test
+    public void miniSelectRadioStation() {
+        Radio radio = new Radio();
+        radio.setRadioStationNumber(-1);
+
+        int expected = 0;
+        int actual = radio.getRadioStationNumber();
+
+        Assertions.assertEquals(expected, actual);
+
+    }
+    @Test
+    public void excessSelectRadioStation() {
+        Radio radio = new Radio();
+        radio.setRadioStationNumber(10);
+
+        int expected = 0;
+        int actual = radio.getRadioStationNumber();
+
+        Assertions.assertEquals(expected, actual);
+
+    }
+    @Test
     public void translationIntoNextSelectRadioStation() {
         Radio radio = new Radio();
         radio.setRadioStationNumber(4);
@@ -77,6 +99,28 @@ class RadioTest {
         radio.setRadioSoundVolume(6);
 
         int expected = 6;
+        int actual = radio.getRadioSoundVolume();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void miniselectRadioVolume() {
+        Radio radio = new Radio();
+        radio.setRadioSoundVolume(-1);
+
+        int expected = 0;
+        int actual = radio.getRadioSoundVolume();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void excessSelectRadioVolume() {
+        Radio radio = new Radio();
+        radio.setRadioSoundVolume(11);
+
+        int expected = 0;
         int actual = radio.getRadioSoundVolume();
 
         Assertions.assertEquals(expected, actual);
