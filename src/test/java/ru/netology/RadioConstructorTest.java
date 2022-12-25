@@ -3,13 +3,13 @@ package ru.netology;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-class RadioTest {
+class RadioConstructorTest {
     @Test
     public void selectRadioStation() {
-        Radio radio = new Radio();
-        radio.setRadioStationNumber(5);
+        Radio radio = new Radio(30);
+        radio.setRadioStationNumber(15);
 
-        int expected = 5;
+        int expected = 15;
         int actual = radio.getRadioStationNumber();
 
         Assertions.assertEquals(expected, actual);
@@ -17,7 +17,7 @@ class RadioTest {
     }
     @Test
     public void miniSelectRadioStation() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(30);
         radio.setRadioStationNumber(-1);
 
         int expected = 0;
@@ -28,8 +28,8 @@ class RadioTest {
     }
     @Test
     public void excessSelectRadioStation() {
-        Radio radio = new Radio();
-        radio.setRadioStationNumber(10);
+        Radio radio = new Radio(30);
+        radio.setRadioStationNumber(31);
 
         int expected = 0;
         int actual = radio.getRadioStationNumber();
@@ -53,8 +53,8 @@ class RadioTest {
 
     @Test
     public void maxSelectRadioStation() {
-        Radio radio = new Radio();
-        radio.setRadioStationNumber(9);
+        Radio radio = new Radio(30);
+        radio.setRadioStationNumber(29);
 
         radio.next();
 
@@ -81,12 +81,12 @@ class RadioTest {
 
     @Test
     public void minSelectRadioStation() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(30);
         radio.setRadioStationNumber(0);
 
         radio.prev();
 
-        int expected = 9;
+        int expected = 29;
         int actual = radio.getRadioStationNumber();
 
         Assertions.assertEquals(expected, actual);
@@ -118,7 +118,7 @@ class RadioTest {
     @Test
     public void excessSelectRadioVolume() {
         Radio radio = new Radio();
-        radio.setRadioSoundVolume(11);
+        radio.setRadioSoundVolume(111);
 
         int expected = 0;
         int actual = radio.getRadioSoundVolume();
@@ -143,11 +143,11 @@ class RadioTest {
     @Test
     public void maxSelectRadioVolume() {
         Radio radio = new Radio();
-        radio.setRadioSoundVolume(10);
+        radio.setRadioSoundVolume(100);
 
         radio.nextVolume();
 
-        int expected = 10;
+        int expected = 100;
         int actual = radio.getRadioSoundVolume();
 
         Assertions.assertEquals(expected, actual);
