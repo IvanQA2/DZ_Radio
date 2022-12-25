@@ -15,6 +15,7 @@ class RadioTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
     public void miniSelectRadioStation() {
         Radio radio = new Radio();
@@ -26,6 +27,7 @@ class RadioTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
     public void excessSelectRadioStation() {
         Radio radio = new Radio();
@@ -37,6 +39,7 @@ class RadioTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
     public void translationIntoNextSelectRadioStation() {
         Radio radio = new Radio();
