@@ -5,28 +5,28 @@ public class Radio {
     private int radioSoundVolume;
     private final int maxStation;
 
-    public Radio(){
+    public Radio() {
         maxStation = 9;
 
     }
 
-    public Radio (int stationsCount){
-        maxStation = stationsCount -1;
+    public Radio(int stationsCount) {
+        maxStation = stationsCount - 1;
 
     }
 
     public void next() {
         if (radioStationNumber == maxStation) {
             radioStationNumber = 0;
-        }
-        else {
+        } else {
             radioStationNumber++;
         }
     }
-    public void prev(){
+
+    public void prev() {
         if (radioStationNumber == 0) {
             radioStationNumber = maxStation;
-        }else{
+        } else {
             radioStationNumber--;
         }
     }
@@ -34,23 +34,25 @@ public class Radio {
     public void nextVolume() {
         if (radioSoundVolume == 100) {
             return;
-        }else{
+        } else {
             radioSoundVolume++;
         }
     }
-    public void prevVolume(){
+
+    public void prevVolume() {
         if (radioSoundVolume == 0) {
             return;
-        }else{
+        } else {
             radioSoundVolume--;
         }
     }
 
-    public int getRadioStationNumber(){
+    public int getRadioStationNumber() {
 
         return radioStationNumber;
     }
-    public void setRadioStationNumber(int radioStationNumber){
+
+    public void setRadioStationNumber(int radioStationNumber) {
         if (radioStationNumber < 0) {
             return;
         }
@@ -60,13 +62,13 @@ public class Radio {
         this.radioStationNumber = radioStationNumber;
     }
 
-    public int getRadioSoundVolume(){
+    public int getRadioSoundVolume() {
 
         return radioSoundVolume;
     }
 
-    public void setRadioSoundVolume(int radioSoundVolume){
-        if (radioSoundVolume <0) {
+    public void setRadioSoundVolume(int radioSoundVolume) {
+        if (radioSoundVolume < 0) {
             return;
         }
         if (radioSoundVolume > 100) {
